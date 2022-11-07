@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 11 Answer</title>
+</head>
+<body>
+    <form onsubmit="saveToLocalStorage(event)">
+    <labe>Name</label>
+    <input type="text" name="username" required>
+    <label>Email</label>
+    <input type="email" name="email" required>
+    <label>Phone Number</label>
+    <input type="text" name="phone">
+    <button>Submit</button>
+    </form>
+    <script>
+        function saveToLocalStorage(event){
+            event.preventDefault();
+            const name=event.target.username.value;
+            const email=event.target.email.value;
+            const phone=event.target.phone.value;
+
+            // localStorage.setItem('name',name);
+            // localStorage.setItem('email',email);
+            // localStorage.setItem('phone number',phone);
+
+            const obj={
+                name:name,
+                email:email,
+                phoneno:phone
+            }
+            localStorage.setItem('userDetails',JSON.stringify(obj));
+        }
+    </script>
+    </body>
+</html>
